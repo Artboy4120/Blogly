@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Blogly{% endblock %}</title>
+  <!-- Add your CSS file here -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/users">Users</a>
+      <a href="/tags">Tags</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- The content block will be replaced by content from other templates -->
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <!-- Your footer content goes here -->
+  </footer>
+
+</body>
+</html>

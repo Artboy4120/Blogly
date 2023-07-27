@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Blogly - Tags{% endblock %}
+
+{% block content %}
+  <h1>All Tags</h1>
+  <ul>
+    {% for tag in tags %}
+      <li><a href="{{ url_for('show_tag', tag_id=tag.id) }}">{{ tag.name }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{{ url_for('new_tag_form') }}" class="btn btn-primary btn-white">Add New Tag</a>
+{% endblock %}

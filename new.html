@@ -1,0 +1,22 @@
+<!-- new_post.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Add New Post for {{ user.full_name }}</h1>
+  <form action="{{ url_for('new_post', user_id=user.id) }}" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required><br>
+
+    <label for="content">Content:</label>
+    <textarea name="content" id="content" rows="4" required></textarea><br>
+
+    <h2>Add Tags</h2>
+    {% for tag in tags %}
+      <label>
+        <input type="checkbox" name="tags" value="{{ tag.id }}"> {{ tag.name }}
+      </label><br>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Add Post</button>
+  </form>
+{% endblock %}
